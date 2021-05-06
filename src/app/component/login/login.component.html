@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div id="formContent">
+    <br>
+    <h3 style="color: darkcyan;">{{'LOGIN.TITLE'|translate}}</h3>
+    <br>
+
+    <form #form="ngForm">
+      <input type="email" id="email" name="email" placeholder="{{'LOGIN.EMAIL'|translate}}" #fieldOne="ngModel" ngModel
+        [class.field-error]="form.submitted && fieldOne.invalid" autocomplete="off" required minlength="4">
+
+      <div *ngIf="fieldOne.invalid && (fieldOne.dirty || fieldOne.touched)" class="alert alert-danger">
+        <div *ngIf="fieldOne.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="fieldOne.errors.minlength">
+          Email must be at least 4 characters long.
+        </div>
+      </div>
+
+      <input type="password" id="password" name="password" placeholder="{{'LOGIN.PASSWORD'|translate}}"
+        #fieldTwo="ngModel" ngModel [class.field-error]="form.submitted && fieldTwo.invalid" required minlength="4">
+
+      <div *ngIf="fieldTwo.invalid && (fieldTwo.dirty || fieldTwo.touched)" class="alert alert-danger">
+        <div *ngIf="fieldTwo.errors.required">
+          Password is required.
+        </div>
+        <div *ngIf="fieldTwo.errors.minlength">
+          Password must be at least 4 characters long.
+        </div>
+      </div>
+      <input type="button" value="{{'LOGIN.LOGIN'|translate}}" (click)="login(form)" [disabled]="!form.valid">
+    </form>
+
+  </div>
+</div>
+<app-footer></app-footer>

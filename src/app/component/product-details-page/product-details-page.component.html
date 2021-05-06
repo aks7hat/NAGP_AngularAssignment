@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card image" style="width: 20rem;">
+            <img class="card-img-top" [src]="product.imageUrl" [alt]="product.name">
+        </div>    
+    </div>
+    <div class="col-sm-6">
+        <div class="card products" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{'Product.PRICE'|translate}} - {{product.price}}</li>
+            <li class="list-group-item">{{'Product.QUANTITY'|translate}} -  {{product.quantity}}</li>   
+            <li class="list-group-item"><button type="button" class="btn btn-primary" (click)="addToCart()">{{'ListPage.ADDTOCART'|translate}}</button></li>   
+            </ul>
+        </div>
+    </div>    
+</div>  
+<app-footer class="footer"></app-footer>

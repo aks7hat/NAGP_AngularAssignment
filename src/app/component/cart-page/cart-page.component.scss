@@ -1,0 +1,30 @@
+.products{
+    width: 16rem; 
+    cursor: pointer;
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 2px 4px 8px darkolivegreen;
+    margin-left: 200px; 
+    margin-bottom: 10px;
+}
+
+.category-product-list{
+    display: flex;
+    flex-direction: column;
+    }
+.checkout, .cartTotal{
+    width: 30%;
+    margin-top: 2rem;
+    margin-left: 55rem;
+  }    
+
+  .card-title {
+    font-size: 20px;
+    text-shadow: 1px 1px brown;
+}
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+    

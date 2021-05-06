@@ -1,0 +1,47 @@
+{
+    "ListPage": {
+        "SEARCH": "Buscar productos",
+        "ADDTOCART": "Carro",
+        "TREE":"Lista de categoría"
+    },
+    "DetailsPage": {
+        "ADDTOCART": "Añadir a la cesta"
+    },
+    "Product": {
+        "ID": "Identificación",
+        "NAME": "Nombre",
+        "DESCRIPTION": "Descripción",
+        "PRICE": "Precio",
+        "QUANTITY": "Cantidad"        
+    },
+    "CART": {
+        "TOTAL": "Total",
+        "CHECKOUT": "Verificar",
+        "INCREASE": "Incrementar",
+        "DECREASE": "Disminución",
+        "REMOVE": "Eliminar",
+        "CARTTOTAL":"total del carrito"
+    },
+    "CHECKOUT": {
+        "USERINFO":"Informacion del usuario",
+        "NAME": "Nombre",
+        "PHONENUMBER": "Número de teléfono",
+        "ADDRESS1":"Dirección Línea 1",
+        "ADDRESS2":"Dirección Línea 2",
+        "EMAIL": "Correo electrónico",
+        "ORDERNOW": "Ordenar ahora"
+    },
+    "LOGIN": {
+        "TITLE": "Formulario de inicio de sesión",
+        "EMAIL": "Correo electrónico",
+        "PASSWORD": "Contraseña",
+        "LOGIN": "Acceso"
+    },
+    "HEADER":{
+        "TITLE":"TIENDA NAGP"
+    },
+    "FOOTER":{
+        "TITLE":"© 2021 Copyright: ASIGNACIÓN DE NAGP POR AKSHAT"
+    }
+
+}

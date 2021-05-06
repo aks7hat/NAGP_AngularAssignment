@@ -1,0 +1,28 @@
+<app-header></app-header>
+<input class="form-control searchBox" [(ngModel)]="searchInputText" placeholder="{{'ListPage.SEARCH'| translate}}"
+  type="text">
+
+<div class="tree">
+  <b>{{'ListPage.TREE'|translate}}</b>
+  <app-category-tree></app-category-tree>
+</div>
+<mat-grid-list cols="2">
+  <div *ngFor="let product of products | search:searchInputText" class="category-product-list">
+    <mat-grid-tile>
+      <div class="card products" style="width: 18rem;" (click)="pdp(product.id)">
+        <img class="card-img-top" [src]="product.imageUrl" [alt]="product.name">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{'Product.PRICE'|translate}} - {{product.price}}</li>
+          <li class="list-group-item">{{'Product.QUANTITY'|translate}} - {{product.quantity}}</li>
+          <li class="list-group-item"><button type="button" class="btn btn-primary addToCart"
+              (click)="addToCart(product)">{{'ListPage.ADDTOCART'|translate}}</button></li>
+        </ul>
+      </div>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>
+<app-footer></app-footer>

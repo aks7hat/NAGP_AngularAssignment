@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div id="formContent">
+    <br>
+    <h1 class="heading" style="color: darkcyan;">{{'CHECKOUT.USERINFO'| translate}}</h1>
+    <br>
+
+    <form #form="ngForm">
+      <input class="form-control" type="text" id="name" name="name" placeholder="{{'CHECKOUT.NAME'| translate}}"
+        #fieldOne="ngModel" ngModel [class.field-error]="form.submitted && fieldOne.invalid" required minlength="4">
+      <span *ngIf="fieldOne.invalid && (fieldOne.dirty || fieldOne.touched)" class="alert">
+        <span *ngIf="fieldOne.errors.required">
+          *NAME is required.
+        </span>
+        <span *ngIf="fieldOne.errors.minlength">
+          *NAME must be at least 4 characters long.
+        </span>
+      </span>
+      <br>
+      <input class="form-control" type="text" id="address1" name="address1"
+        placeholder="{{'CHECKOUT.ADDRESS1'| translate}}" #fieldTwo="ngModel" ngModel
+        [class.field-error]="form.submitted && fieldTwo.invalid" required minlength="4">
+      <span *ngIf="fieldTwo.invalid && (fieldTwo.dirty || fieldTwo.touched)" class="alert">
+        <span *ngIf="fieldTwo.errors.required">
+          *Address is required.
+        </span>
+        <span *ngIf="fieldTwo.errors.minlength">
+          *Address must be at least 4 characters long.
+        </span>
+      </span>
+      <br>
+      <input class="form-control" type="text" id="address2" name="address2"
+        placeholder="{{'CHECKOUT.ADDRESS2'| translate}}...(OPTIONAL)" #fieldThree="ngModel" ngModel
+        [class.field-error]="form.submitted && fieldTwo.invalid">
+      <br>
+      <input class="form-control" type="text" id="mobile" name="mobile"
+        placeholder="{{'CHECKOUT.PHONENUMBER'| translate}}" #fieldFour="ngModel" ngModel
+        [class.field-error]="form.submitted && fieldTwo.invalid" required minlength="10">
+      <span *ngIf="fieldFour.invalid && (fieldFour.dirty || fieldFour.touched)" class="alert">
+        <span *ngIf="fieldFour.errors.required">
+          *Mobile Number is required.
+        </span>
+        <span *ngIf="fieldFour.errors.minlength">
+          *Mobile must be at least 10 characters long.
+        </span>
+      </span>
+      <br>
+      <input class="form-control" type="email" id="email" name="email" placeholder="{{'CHECKOUT.EMAIL'| translate}}"
+        #fieldFive="ngModel" ngModel [class.field-error]="form.submitted && fieldTwo.invalid" required minlength="4">
+      <span *ngIf="fieldFive.invalid && (fieldFive.dirty || fieldFive.touched)" class="alert">
+        <span *ngIf="fieldFive.errors.required">
+          *Email is required.
+        </span>
+        <span *ngIf="fieldFive.errors.minlength">
+          *Email must be at least 4 characters long.
+        </span>
+      </span>
+      <br>
+      <button class="btn btn-primary orderNow" value="Order Now" (click)="orderNow(form)"
+        [disabled]="!form.valid">{{'CHECKOUT.ORDERNOW'| translate}}</button>
+    </form>
+
+  </div>
+</div>
+<app-footer></app-footer>

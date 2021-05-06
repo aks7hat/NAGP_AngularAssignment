@@ -1,0 +1,24 @@
+<app-header></app-header>
+<button type="button" class="btn btn-secondary checkout" (click)="checkout()">{{'CART.CHECKOUT'| translate}}</button>
+<div class="cartTotal">{{'CART.CARTTOTAL'| translate}} - {{total}}</div>
+
+<div *ngFor="let product of products" class="category-product-list">
+    <div class="card products" style="width: 18rem;">
+        <img class="card-img-top" [src]="product.imageUrl" [alt]="product.name">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{'Product.PRICE'|translate}} - {{product.totalPrice}}</li>
+            <li class="list-group-item">{{'Product.QUANTITY'|translate}} - {{product.quantity}}</li>
+            <li class="list-group-item"><button type="button" class="btn btn-danger"
+                    (click)="increaseQuantity(product.id)">{{'CART.INCREASE'| translate}}</button></li>
+            <li class="list-group-item"><button type="button" class="btn btn-danger"
+                    (click)="decreaseQuantity(product.id)">{{'CART.DECREASE'| translate}}</button></li>
+            <li class="list-group-item"><button type="button" class="btn btn-danger"
+                    (click)="remove(product.id)">{{'CART.REMOVE'| translate}}</button></li>
+        </ul>
+    </div>
+</div>
+<app-footer [ngClass]="{'footer':products==''}"></app-footer>
